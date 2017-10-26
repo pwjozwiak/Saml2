@@ -73,7 +73,8 @@ namespace Kentor.AuthServices.Saml2P
 
             using (var client = new WebClient())
             {
-                client.Headers.Add("SOAPAction", "http://www.oasis-open.org/committees/security");
+                // pz.gov.pl adjustments
+                client.Headers.Add("SOAPAction", "");
                 var response = client.UploadString(destination, message);
 
                 return ExtractBody(response);

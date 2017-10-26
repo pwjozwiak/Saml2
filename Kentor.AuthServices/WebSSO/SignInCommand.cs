@@ -81,7 +81,8 @@ namespace Kentor.AuthServices.WebSso
                 }
             }
 
-            if (request.StoredRequestState != null)
+            // pz.gov.pl adjustments
+            if (request.StoredRequestState != null && request.StoredRequestState.ReturnUrl != null)
             {
                 returnUrl = request.StoredRequestState.ReturnUrl.OriginalString;
             }

@@ -256,8 +256,13 @@ namespace Kentor.AuthServices
             }
 
             signedXml.LoadXml(signatureElement);
-            ValidateSignedInfo(signedXml, xmlElement, minimumSigningAlgorithm);
-            VerifySignature(signingKeys, signedXml, signatureElement, validateCertificate);
+
+            // pz.gov.pl adjustments
+            if (validateCertificate)
+            {
+                ValidateSignedInfo(signedXml, xmlElement, minimumSigningAlgorithm);
+                VerifySignature(signingKeys, signedXml, signatureElement, validateCertificate);
+            }
 
             return true;
         }

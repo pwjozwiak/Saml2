@@ -1,3 +1,6 @@
+Version 0.21.3
+* pz.gov.pl adjustments
+
 Version 0.21.2
 * Security fix: Flawed validation of Return URL causes Open Redirect
 * Security fix: XML External Entity Processing on .NET 4.5
